@@ -19,7 +19,6 @@ class OrderForm extends Component {
   handleIngredientChange = event => {
     event.preventDefault()
     this.setState({ingredients: [...this.state.ingredients, event.target.name] })
-    console.log(this.state)
   }
 
   handleSubmit = e => {
