@@ -26,7 +26,6 @@ class OrderForm extends Component {
 
     if (this.state.name && this.state.ingredients.length) {
         const newOrder = {
-        id: Date.now(),
         ...this.state
       }
       this.props.postOrder(newOrder);
