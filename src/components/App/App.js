@@ -12,13 +12,6 @@ class App extends Component {
     }
   }
 
-  getOrders = () => {
-    fetch('http://localhost:3001/api/v1/orders')
-    .then(response => response.json())
-    .then(data => this.setState({orders: data.orders}))
-    .catch(err => console.error('Error fetching:', err));
-  }
-
   postOrder = (newOrder) => {
     fetch('http://localhost:3001/api/v1/orders', {
       method: 'POST',
@@ -30,7 +23,9 @@ class App extends Component {
   }
 
   componentDidMount = () => {
-    this.getOrders()
+    getOrders()
+    .then(data => this.setState({orders: data.orders}))
+    .catch(err => console.error('Error fetching:', err));
   }
 
   render() {
